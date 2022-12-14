@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from rest_framework.urlpatterns import format_suffix_patterns
 from AlumnosMaestria import views
 from AlumnosMaestria.views import * 
@@ -103,35 +103,35 @@ catalogorequisito_list = CatalogoRequisitoViewset.as_view({
     'post': 'create'
 })
 
-app_name = 'AlumnosMaestria'
-urlpatterns = [
+# app_name = 'AlumnosMaestria'
+# urlpatterns = format_suffix_patterns([
  
-    path('', api_root),
-    path('semestre/', semestre_list, name='semestre-list'),
-    path('semestre/<int:pk>/', semestre_detail, name='semestre-detail'),
-    path('periodo/', periodo_list, name='periodo-list'),
-    path('periodo/<int:pk>/', periodo_detail, name='periodo-detail'),
-    path('alumno/',alumno_list, name='alumno-list'),
-    path('alumno/<int:pk>/', alumno_detail, name='alumno-detail'),
-    path('user/', user_list, name='user-list'),
-    path('user/<int:pk>/', user_detail, name='user-detail'),
-    path('estatusrequisito/', estatusrequisito_list, name='estatusrequisito-list'),
-    path('estatusrequisito/<int:pk>/',estatusrequisito_detail, name='estatusrequisito-detail'),
-    path('documentos/',documento_list, name='documento-list'),
-    path('documentos/<int:pk>/',documento_detail, name='documento-detail'),
-    path('requisito/',requisito_list, name='requisito-list'),
-    path('requisito/<int:pk>/',requisito_detail, name='requisito-detail'),
-    path('detalledocumento/',detalledocumento_list, name='detalledocumento-list'),
-    path('detalledocumento/<int:pk>/',detalledocumento_detail, name='detalledocumento-detail'),
-    path('catalogorequisito/',catalogorequisito_list, name='catalogorequisito-list'),
-    path('catalogoquisito/<int:pk>/',catalogorequisito_detail, name='catalogorequisito-detail'),
+#     path('', api_root),
+#     path('semestre/', semestre_list, name='semestre-list'),
+#     path('semestre/<int:pk>/', semestre_detail, name='semestre-detail'),
+#     path('periodo/', periodo_list, name='periodo-list'),
+#     path('periodo/<int:pk>/', periodo_detail, name='periodo-detail'),
+#     path('alumno/',alumno_list, name='alumno-list'),
+#     path('alumno/<int:pk>/', alumno_detail, name='alumno-detail'),
+#     path('user/', user_list, name='user-list'),
+#     path('user/<int:pk>/', user_detail, name='user-detail'),
+#     path('estatusrequisito/', estatusrequisito_list, name='estatusrequisito-list'),
+#     path('estatusrequisito/<int:pk>/',estatusrequisito_detail, name='estatusrequisito-detail'),
+#     path('documentos/',documento_list, name='documento-list'),
+#     path('documentos/<int:pk>/',documento_detail, name='documento-detail'),
+#     path('requisito/',requisito_list, name='requisito-list'),
+#     path('requisito/<int:pk>/',requisito_detail, name='requisito-detail'),
+#     path('detalledocumento/',detalledocumento_list, name='detalledocumento-list'),
+#     path('detalledocumento/<int:pk>/',detalledocumento_detail, name='detalledocumento-detail'),
+#     path('catalogorequisito/',catalogorequisito_list, name='catalogorequisito-list'),
+#     path('catalogoquisito/<int:pk>/',catalogorequisito_detail, name='catalogorequisito-detail'),
     
-]
+# ])
 
-urlpatterns = format_suffix_patterns(urlpatterns)
+# urlpatterns = format_suffix_patterns(urlpatterns)
 
 
-router = routers.SimpleRouter()
+router = routers.DefaultRouter()
 
 #router.register(r'semestre', views.SemestreViewSet)
 #router.register(r'periodo', views.PeriodoViewset)
@@ -152,3 +152,7 @@ router.register(r'documento', views.DocumentoViewset,basename="documentos")
 router.register(r'requisito', views.RequisitoViewset,basename="requisitos")
 router.register(r'detalledocumento', views.DetalleDocumentoViewset,basename="detalledocumento")
 router.register(r'catalogorequisito', views.CatalogoRequisitoViewset,basename="catalogorequisito")
+
+urlpatterns = [
+    path('', include(router.urls)),
+]
