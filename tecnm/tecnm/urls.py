@@ -1,4 +1,5 @@
 from django.urls import path
+from django.contrib import admin
 from django.conf.urls import include
 from django.conf import settings
 from django.conf.urls.static import static
@@ -38,6 +39,7 @@ RouterAlumnos.extend(router_AlumnosMaestria)
 
 
 urlpatterns = [
+    path('admin/',admin.site.urls),
     # path('', include(RouterAlumnos.urls)),
     # # path('Alumnos/',include(RouterAlumnos.urls)),
     path('Alumno/',include(RouterAlumnos.urls)),

@@ -5,103 +5,103 @@ from AlumnosMaestria.views import *
 from rest_framework import renderers
 from rest_framework import routers
 
-semestre_list = SemestreViewSet.as_view({
-    'get': 'list',
-    'post': 'create'
-})
-semestre_detail = SemestreViewSet.as_view({
-    'get': 'retrieve',
-    'put': 'update',
-    'patch': 'partial_update',
-    'delete': 'destroy'
-})
+# semestre_list = SemestreViewSet.as_view({
+#     'get': 'list',
+#     'post': 'create'
+# })
+# semestre_detail = SemestreViewSet.as_view({
+#     'get': 'retrieve',
+#     'put': 'update',
+#     'patch': 'partial_update',
+#     'delete': 'destroy'
+# })
 
-user_list = UserViewSet.as_view({
-    'get': 'list',
-    'post': 'create'
-})
-user_detail = UserViewSet.as_view({
-    'get': 'retrieve',
-    'put': 'update',
-    'patch': 'partial_update',
-    'delete': 'destroy'
-})
+# user_list = UserViewSet.as_view({
+#     'get': 'list',
+#     'post': 'create'
+# })
+# user_detail = UserViewSet.as_view({
+#     'get': 'retrieve',
+#     'put': 'update',
+#     'patch': 'partial_update',
+#     'delete': 'destroy'
+# })
 
-periodo_list = SemestreViewSet.as_view({
-    'get': 'list',
-    'post': 'create'
-})
-periodo_detail = SemestreViewSet.as_view({
-    'get': 'retrieve',
-    'put': 'update',
-    'patch': 'partial_update',
-    'delete': 'destroy'
-})
-alumno_detail = AlumnoViewset.as_view({
-    'get': 'retrieve',
-    'put': 'update',
-    'patch': 'partial_update',
-    'delete': 'destroy'
-})
-alumno_list = AlumnoViewset.as_view({
-    'get': 'list',
-    'post': 'create'
-})
+# periodo_list = SemestreViewSet.as_view({
+#     'get': 'list',
+#     'post': 'create'
+# })
+# periodo_detail = SemestreViewSet.as_view({
+#     'get': 'retrieve',
+#     'put': 'update',
+#     'patch': 'partial_update',
+#     'delete': 'destroy'
+# })
+# alumno_detail = AlumnoViewset.as_view({
+#     'get': 'retrieve',
+#     'put': 'update',
+#     'patch': 'partial_update',
+#     'delete': 'destroy'
+# })
+# alumno_list = AlumnoViewset.as_view({
+#     'get': 'list',
+#     'post': 'create'
+# })
 
-estatusrequisito_detail = EstatusRequisitosAlumnoViewset.as_view({
-    'get': 'retrieve',
-    'put': 'update',
-    'patch': 'partial_update',
-    'delete': 'destroy'
-})
-estatusrequisito_list = AlumnoViewset.as_view({
-    'get': 'list',
-    'post': 'create'
-})
+# estatusrequisito_detail = EstatusRequisitosAlumnoViewset.as_view({
+#     'get': 'retrieve',
+#     'put': 'update',
+#     'patch': 'partial_update',
+#     'delete': 'destroy'
+# })
+# estatusrequisito_list = AlumnoViewset.as_view({
+#     'get': 'list',
+#     'post': 'create'
+# })
 
-documento_detail = DocumentoViewset.as_view({
-    'get': 'retrieve',
-    'put': 'update',
-    'patch': 'partial_update',
-    'delete': 'destroy'
-})
-documento_list = DocumentoViewset.as_view({
-    'get': 'list',
-    'post': 'create'
-})
+# documento_detail = DocumentoViewset.as_view({
+#     'get': 'retrieve',
+#     'put': 'update',
+#     'patch': 'partial_update',
+#     'delete': 'destroy'
+# })
+# documento_list = DocumentoViewset.as_view({
+#     'get': 'list',
+#     'post': 'create'
+# })
 
-requisito_detail = RequisitoViewset.as_view({
-    'get': 'retrieve',
-    'put': 'update',
-    'patch': 'partial_update',
-    'delete': 'destroy'
-})
-requisito_list = RequisitoViewset.as_view({
-    'get': 'list',
-    'post': 'create'
-})
+# requisito_detail = RequisitoViewset.as_view({
+#     'get': 'retrieve',
+#     'put': 'update',
+#     'patch': 'partial_update',
+#     'delete': 'destroy'
+# })
+# requisito_list = RequisitoViewset.as_view({
+#     'get': 'list',
+#     'post': 'create'
+# })
 
-detalledocumento_detail =DetalleDocumentoViewset.as_view({
-    'get': 'retrieve',
-    'put': 'update',
-    'patch': 'partial_update',
-    'delete': 'destroy'
-})
-detalledocumento_list = DetalleDocumentoViewset.as_view({
-    'get': 'list',
-    'post': 'create'
-})
+# detalledocumento_detail =DetalleDocumentoViewset.as_view({
+#     'get': 'retrieve',
+#     'put': 'update',
+#     'patch': 'partial_update',
+#     'delete': 'destroy'
+# })
+# detalledocumento_list = DetalleDocumentoViewset.as_view({
+#     'get': 'list',
+#     'post': 'create'
+# })
 
-catalogorequisito_detail = CatalogoRequisitoViewset.as_view({
-    'get': 'retrieve',
-    'put': 'update',
-    'patch': 'partial_update',
-    'delete': 'destroy'
-})
-catalogorequisito_list = CatalogoRequisitoViewset.as_view({
-    'get': 'list',
-    'post': 'create'
-})
+# catalogorequisito_detail = CatalogoRequisitoViewset.as_view({
+#     'get': 'retrieve',
+#     'put': 'update',
+#     'patch': 'partial_update',
+#     'delete': 'destroy'
+# })
+# catalogorequisito_list = CatalogoRequisitoViewset.as_view({
+#     'get': 'list',
+#     'post': 'create'
+# })
 
 # app_name = 'AlumnosMaestria'
 # urlpatterns = format_suffix_patterns([
@@ -152,7 +152,11 @@ router.register(r'documento', views.DocumentoViewset,basename="documentos")
 router.register(r'requisito', views.RequisitoViewset,basename="requisitos")
 router.register(r'detalledocumento', views.DetalleDocumentoViewset,basename="detalledocumento")
 router.register(r'catalogorequisito', views.CatalogoRequisitoViewset,basename="catalogorequisito")
+# router.register(r'signup',signup,basename="signup")
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('signup/', views.signup, name= 'signup'),
+    path('login/', views.login),
+
 ]
